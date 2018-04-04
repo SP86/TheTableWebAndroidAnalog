@@ -1,0 +1,131 @@
+// Color support for .navbar-dark
+
+#mainNav.navbar-dark {
+  .navbar-collapse {
+    .navbar-sidenav {
+      .nav-link-collapse:after {
+        color: $gray-600;
+      }
+      > .nav-item {
+        > .nav-link {
+          color: $gray-600;
+          &:hover {
+            color: $gray-500;
+          }
+        }
+        .sidenav-second-level,
+        .sidenav-third-level {
+          > li > a {
+            color: $gray-600;
+            &:focus,
+            &:hover {
+              color: $gray-500;
+            }
+          }
+        }
+      }
+    }
+    .navbar-nav > .nav-item.dropdown > .nav-link:after {
+      color: $gray-500;
+    }
+  }
+  @media (min-width: 992px) {
+    .navbar-collapse {
+      .navbar-sidenav {
+        background: $gray-800;
+        li {
+          &.active {
+            a {
+              color: white !important;
+              background-color: $gray-700;
+              &:focus,
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+        > .nav-item {
+          .sidenav-second-level,
+          .sidenav-third-level {
+            background: $gray-800;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Color support for .navbar-light
+
+#mainNav.navbar-light {
+  .navbar-collapse {
+    .navbar-sidenav {
+      .nav-link-collapse:after {
+        color: fade-out($custom_blue, 0.6);
+      }
+      > .nav-item {
+        > .nav-link {
+          color: fade-out($custom_blue, 0.6);
+          &:hover {
+            color: $custom_blue;
+            img{
+              opacity: 1;
+            }
+          }
+          img{
+            opacity: 0.6;
+          }
+        }
+
+        .sidenav-second-level,
+        .sidenav-third-level {
+          > li > a {
+            color: fade-out($custom_blue, 0.5);
+            &:focus,
+            &:hover {
+              color: fade-out($custom_blue, 0.3);
+            }
+          }
+        }
+      }
+      > .nav-item.active {
+        > .nav-link {
+          color: $custom_blue !important;
+          img{
+            opacity: 1;
+          }
+        }
+
+      }
+    }
+    .navbar-nav > .nav-item.dropdown > .nav-link:after {
+      color: fade-out($custom_blue, 0.5);
+    }
+  }
+  @media (min-width: 992px) {
+    .navbar-collapse {
+      .navbar-sidenav {
+        background: $white;
+        padding: 20px 0;
+        li {
+          &.active {
+            a {
+              color: $black !important;
+              &:focus,
+              &:hover {
+                color: $black;
+              }
+            }
+          }
+        }
+        > .nav-item {
+          .sidenav-second-level,
+          .sidenav-third-level {
+            background: $gray-100;
+          }
+        }
+      }
+    }
+  }
+}

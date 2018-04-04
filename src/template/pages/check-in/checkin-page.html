@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>The Table</title>
+  <link href="../../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="../../../css/custom-styles.css" rel="stylesheet" type="text/css">
+  <link href="../../../css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+  <link href="../../../css/fullcalendar.css" rel="stylesheet" type="text/css">
+  <link href="../../../css/scheduler.css" rel="stylesheet" type="text/css">
+  <link href="../../../css/fullcalendar.print.css" media="print">
+</head>
+<body class="fixed-nav" id="page-top">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top header" id="mainNav">
+  <div class="navbar-brand" href="index.html">Eshak</div>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <li class="nav-item active">
+        <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
+          <div><img src="../../../img/calendar_akvive.png"></div>
+          <span class="nav-link-text pl-4">Календар</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
+          <img src="../../../img/clients_aktive.png">
+          <span class="nav-link-text pl-4">Клієнти</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
+          <img src="../../../img/history_aktive.png">
+          <span class="nav-link-text pl-4">Історія</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
+          <img src="../../../img/profile_aktive.png">
+          <span class="nav-link-text pl-4">Профайл</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item">
+        <a class="nav-link text-center" id="sidenavToggler">
+          <i class="fa fa-fw fa-angle-left"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa fa-fw fa-sign-out"></i>Выход</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="content-wrapper">
+  <div class="container-fluid">
+
+<div class="row blue_bg p-4">
+    <div class="col-12">
+        <form class="d-flex align-items-center flex-wrap flex-md-nowrap clients_search_wrap">
+            <div class="input-group d-flex flex-nowrap align-items-center mb-4 mb-md-0">
+                <div class="input-group-prepend">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <input type="text" class="mx-3 border-bottom-green" placeholder="Пошук по імені чи телефону">
+            </div>
+        </form>
+    </div>
+</div>
+<!--<div class="row px-4 mt-4">
+    <div class="col-10">
+     1
+    </div>
+    <div class="col-2 d-flex align-items-center justify-content-around">
+        <button class="btn btn-light">Выбрать</button>
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+    </div>
+</div> -->
+<div class="row px-4 mt-4">
+    <div class="col-12" id="calendar"></div>
+</div>
+
+
+
+  </div>
+
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+</div>
+
+
+  <script src="../../../js/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../../js/bootstrap-datepicker.min.js"></script>
+  <script src="../../../locales/bootstrap-datetimepicker.ru.js" charset="UTF-8"></script>
+  <script src="../../../js/jquery.form-validator.min.js"></script>
+  <script src="../../../js/jquery.inputmask.bundle.js"></script>
+
+  <script src="../../../js/fullcalendar.js"></script>
+  <script src="../../../js/scheduler.min.js"></script>
+  <script src="../../../locales/ru.js"></script>
+  <script src="../../../js/bundle.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#profile_bdate').datepicker({
+              format: "yyyy-mm-dd",
+              autoclose: true,
+              language: 'ru',
+              orientation: "bottom auto" ,
+              todayHighlight: true,
+              endDate: "<?=date('Y-m-d')?>",
+          });
+
+          var json_array = '[' +
+              '{"id":"1","start":"2018-04-04T12:00:00", "end":"2018-04-04T16:00:00", "title":"event 1" },' +
+              '{"id":"2","start":"2018-04-04T15:00:00", "end":"2018-04-04T16:30:00", "title":"event 2" },' +
+              '{"id":"3","start":"2018-04-04T14:00:00", "end":"2018-04-04T17:45:00", "title":"event 3" }]';
+
+          var convarray = JSON.parse(json_array);
+
+          console.log(convarray);
+
+          $('#calendar').fullCalendar({
+              defaultDate: '2018-04-04',
+              lang: 'ru',
+              snapDuration : '24:00:00',
+              timeFormat: 'HH:mm{ - HH:mm}',
+              axisFormat: 'HH:mm',
+              customButtons: {
+                  myCustomButton: {
+                      text: 'Выбрать дату',
+                      click: function() {
+                          $("#fullcalendar_datepicker").show();
+                      }
+                  }
+              },
+              header: {
+                  left: 'prev,next today myCustomButton',
+                  center: 'title',
+                  right: ''
+              },
+              eventClick: function(calEvent, jsEvent, view) {
+                  location.href = "http://itpromotion.com.ua/"+calEvent.id;
+              },
+              defaultView: 'timelineDay',
+              nowIndicator:true,
+              eventSources : [
+                  {
+                      events : convarray,
+                      color : '#3f5f99',
+                      textColor : '#fff'
+                  }
+              ],
+
+          });
+
+
+          $('.fc-myCustomButton-button').datepicker({
+              format: "yyyy-mm-dd",
+              autoclose: true,
+              language: 'ru',
+              orientation: "bottom auto" ,
+              todayHighlight: true,
+          }).on('changeDate', function(e) {
+                 console.log(e.format(0,"yyyy-mm-dd"));
+                  $('#calendar').fullCalendar('gotoDate', e.format(0,"yyyy-mm-dd"));
+              });
+
+      });
+  </script>
+</body>
+</html>
+
+
+
+

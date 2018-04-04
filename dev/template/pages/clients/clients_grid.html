@@ -1,0 +1,242 @@
+<!-- @@master = /layout/app.html-->
+<!-- @@block = content -->
+<div class="row blue_bg p-4">
+    <div class="col-12">
+        <form class="d-flex align-items-center flex-wrap flex-md-nowrap clients_search_wrap">
+            <div class="input-group d-flex flex-nowrap align-items-center mb-4 mb-md-0">
+                <div class="input-group-prepend">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <input type="text" class="mx-3" placeholder="Пошук по імені чи номеру">
+            </div>
+            <button class="custom-btn blue_btn mr-3">Актуальные бронирования</button>
+            <button class="custom-btn transparent_btn mr-3">Check-in</button>
+            <button class="custom-btn transparent_btn">Все</button>
+        </form>
+    </div>
+</div>
+<div class="row usersGrid px-4 mt-4">
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item item usersGrid__item_first usersGrid__item_blue d-flex flex-column justify-content-center align-items-center h-100" data-toggle="modal" data-target="#modal_add">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <span>Створити профайл</span>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item usersGrid__item_blue item d-flex flex-column h-100">
+            <div class="item__icons"><img src="@@webRoot/../img/client_table_logo.png" class="img-fluid"></div>
+            <div class="item__image text-center">
+                <img src="http://via.placeholder.com/85x85" class="img-fluid rounded-circle"/>
+            </div>
+            <div class="item__title text-center"><a href="#!">Максим Коваль</a></div>
+            <div class="item__phone text-center">+380673607437</div>
+            <div class="item__visit text-center">100% візитів</div>
+            <div class="item__rating text-center">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <button class="item__remind custom-btn light_blue_btn">Нагадати</button>
+            <div class="item__time d-flex justify-content-between align-items-center">
+                <div><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="time_value">17:00</span></div>
+                <div>3VIP</div>
+            </div>
+            <button class="item__chekin custom-btn green_btn">Chek-in</button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item usersGrid__item_green item d-flex flex-column h-100">
+            <div class="item__image text-center">
+                <img src="http://via.placeholder.com/85x85" class="img-fluid rounded-circle"/>
+            </div>
+            <div class="item__title text-center">Максим Коваль</div>
+            <div class="item__phone text-center">+380673607437</div>
+            <div class="item__visit text-center">100% візитів</div>
+            <div class="item__rating text-center">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <button class="item__remind custom-btn light_blue_btn">Нагадати</button>
+            <div class="item__time d-flex justify-content-between align-items-center">
+                <div><span class="plus_item">+2</span><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="time_value">17:00</span></div>
+                <div>3VIP</div>
+            </div>
+            <button class="item__chekin custom-btn green_btn">Chek-in</button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item item d-flex flex-column h-100">
+            <div class="item__image text-center">
+                <img src="http://via.placeholder.com/85x85" class="img-fluid rounded-circle"/>
+            </div>
+            <div class="item__title text-center">Максим Коваль</div>
+            <div class="item__phone text-center">+380673607437</div>
+            <div class="item__new text-center">Новий клієнт</div>
+            <div class="item__rating text-center">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item usersGrid__item_pink item d-flex flex-column h-100">
+            <div class="item__image text-center">
+                <img src="http://via.placeholder.com/85x85" class="img-fluid rounded-circle"/>
+            </div>
+            <div class="item__title text-center">Максим Коваль</div>
+            <div class="item__phone text-center">+380673607437</div>
+            <div class="item__visit text-center">100% візитів</div>
+            <div class="item__rating text-center">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <button class="item__invitation custom-btn light_blue_btn">Запрошення</button>
+            <div class="item__time d-flex justify-content-between align-items-center">
+                <div><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="time_value">17:00</span></div>
+                <div>3VIP</div>
+            </div>
+            <button class="item__chekin custom-btn green_btn">Chek-in</button>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 col-xl mb-3">
+        <div class="usersGrid__item item d-flex flex-column h-100">
+            <div class="item__image text-center">
+                <img src="http://via.placeholder.com/85x85" class="img-fluid rounded-circle"/>
+            </div>
+            <div class="item__title text-center">Максим Коваль</div>
+            <div class="item__phone text-center">+380673607437</div>
+            <div class="item__visit text-center">100% візитів</div>
+            <div class="item__rating text-center">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <button class="item__remind custom-btn light_blue_btn">Нагадати</button>
+            <div class="item__time d-flex justify-content-between align-items-center">
+                <div><span class="plus_item">+1</span><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="time_value">17:00</span></div>
+                <div>3VIP</div>
+            </div>
+            <button class="item__chekin custom-btn pink_btn">Chek-out</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group custom_form_group">
+                                        <label for="profile_phone"><span class="text-danger">*</span>Создать профайл</label>
+                                        <input type="text" class="form-control phone_mask" id="profile_phone" name="profile_phone" placeholder="380 XX XXX XXXX" data-validation="required" data-validation-error-msg="Введите телефон" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6">
+                                            <div class="form-group custom_form_group">
+                                                <label for="profile_name"><span class="text-danger">*</span>Имя</label>
+                                                <input type="text" class="form-control" id="profile_name" name="profile_name" data-validation="required" data-validation-error-msg="Введите имя"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div class="form-group custom_form_group">
+                                                <label for="profile_second_name">Фамилия</label>
+                                                <input type="text" class="form-control" id="profile_second_name" name="profile_second_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group custom_form_group">
+                                        <label for="profile_email">E-mail</label>
+                                        <input type="text" class="form-control" id="profile_email" name="profile_email">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group custom_form_group">
+                                        <label for="profile_bdate">Дата рождения</label>
+                                        <input type="text" class="form-control" id="profile_bdate" name="profile_bdate">
+                                    </div>
+                                    <div class="form-group custom_form_group">
+                                        <label>Статус</label>
+                                    </div>
+                                    <div class="form-group" id="star_rating_wrapper">
+                                        <div class="rating">
+                                            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                                            <label for="star5" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                                            <label for="star4" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                                            <label for="star3" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" checked="checked" />
+                                            <label for="star2" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                                            <label for="star1" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group custom_form_group">
+                                        <label>Пол</label>
+                                    </div>
+                                    <div class="form-group custom_radio_group">
+                                        <label>
+                                            <input type="radio" name="options"/>
+                                            <span>Мужской</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="options"/>
+                                            <span>Женский</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group custom_form_group">
+                                        <label>Примерный возраст</label>
+                                    </div>
+                                    <div class="form-group custom_radio_group">
+                                        <label>
+                                            <input type="radio" name="approximate_age"/>
+                                            <span>18-25</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="approximate_age"/>
+                                            <span>26-35</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="approximate_age"/>
+                                            <span>36-50</span>
+                                        </label>
+                                    </div>
+                                    <input type="submit" class="custom-btn pink_btn float-right" value="Создать" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- @@close -->
