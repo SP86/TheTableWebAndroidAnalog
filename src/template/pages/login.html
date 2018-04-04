@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>The Table</title>
+  <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="../../css/custom-styles.css" rel="stylesheet" type="text/css">
+  <link href="../../css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+  <link href="../../css/fullcalendar.css" rel="stylesheet" type="text/css">
+  <link href="../../css/scheduler.css" rel="stylesheet" type="text/css">
+  <link href="../../css/fullcalendar.print.css" media="print">
+</head>
+<body class="fixed-nav" id="page-top">
+
+<div class="login_wrapper d-flex flex-column justify-content-center align-items-center">
+<div class="container mt-auto pb-5">
+    <div class="card card-login mx-auto">
+        <div class="card-body">
+            <form>
+                <div class="form-logo d-flex justify-content-center align-items-center mb-2">
+                    <img src="../../img/login_logo_144.png" class="img-fluid mx-auto">
+                </div>
+                <div class="form-group">
+                    <label for="login" class="m-0">Ваш логин</label>
+                    <input class="form-control rounded-0" id="login">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="m-0">Ваш пароль</label>
+                    <input class="form-control rounded-0" id="password" type="password">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-block mx-auto mt-2 enter_btn border-0" href="index.html">Войти</button>
+</div>
+    <div class="login_footer p-4 mt-auto">The Tables for Administrators</div>
+</div>
+
+
+  <script src="../../js/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../js/bootstrap-datepicker.min.js"></script>
+  <script src="../../locales/bootstrap-datetimepicker.ru.js" charset="UTF-8"></script>
+  <script src="../../js/jquery.form-validator.min.js"></script>
+  <script src="../../js/jquery.inputmask.bundle.js"></script>
+
+  <script src="../../js/fullcalendar.js"></script>
+  <script src="../../js/scheduler.min.js"></script>
+  <script src="../../locales/ru.js"></script>
+  <script src="../../js/jquery.easing.min.js"></script>
+  <script src="../../js/bundle.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#profile_bdate').datepicker({
+              format: "yyyy-mm-dd",
+              autoclose: true,
+              language: 'ru',
+              orientation: "bottom auto" ,
+              todayHighlight: true,
+              endDate: "<?=date('Y-m-d')?>",
+          });
+
+          var json_array = '[' +
+              '{"id":"1","start":"2018-04-04T12:00:00", "end":"2018-04-04T16:00:00", "title":"event 1" },' +
+              '{"id":"2","start":"2018-04-04T15:00:00", "end":"2018-04-04T16:30:00", "title":"event 2" },' +
+              '{"id":"3","start":"2018-04-04T14:00:00", "end":"2018-04-04T17:45:00", "title":"event 3" }]';
+
+          var convarray = JSON.parse(json_array);
+
+          console.log(convarray);
+
+          $('#calendar').fullCalendar({
+              defaultDate: '2018-04-04',
+              lang: 'ru',
+              snapDuration : '24:00:00',
+              timeFormat: 'HH:mm{ - HH:mm}',
+              axisFormat: 'HH:mm',
+              customButtons: {
+                  myCustomButton: {
+                      text: 'Выбрать дату',
+                      click: function() {
+                          $("#fullcalendar_datepicker").show();
+                      }
+                  }
+              },
+              header: {
+                  left: 'prev,next today myCustomButton',
+                  center: 'title',
+                  right: ''
+              },
+              eventClick: function(calEvent, jsEvent, view) {
+                  location.href = "http://itpromotion.com.ua/"+calEvent.id;
+              },
+              defaultView: 'timelineDay',
+              nowIndicator:true,
+              eventSources : [
+                  {
+                      events : convarray,
+                      color : '#3f5f99',
+                      textColor : '#fff'
+                  }
+              ],
+
+          });
+
+
+          $('.fc-myCustomButton-button').datepicker({
+              format: "yyyy-mm-dd",
+              autoclose: true,
+              language: 'ru',
+              orientation: "bottom auto" ,
+              todayHighlight: true,
+          }).on('changeDate', function(e) {
+                 console.log(e.format(0,"yyyy-mm-dd"));
+                  $('#calendar').fullCalendar('gotoDate', e.format(0,"yyyy-mm-dd"));
+              });
+
+      });
+  </script>
+</body>
+</html>
+
+
+
+

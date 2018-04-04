@@ -1,6 +1,42 @@
-.card-login {
-  max-width: 25rem;
+.login_wrapper{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 100vh;
+  background: rgba(63,95,153,1);
+  .card-login {
+    .card-body{
+      padding-bottom: 3rem;
+    }
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    label{
+      color: $custom_green;
+    }
+    input{
+      border: none;
+      border-bottom: 1px solid $custom_green;
+    }
+  }
+  .enter_btn{
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    background:  $white;
+    color:#3f5f99;
+    text-transform: uppercase;
+    padding: .7rem .75rem;
+    font-family:LatoBold;
+    &:hover, &:focus{
+      background: #fff;
+      color: $custom_green;
+    }
+  }
+  .login_footer{
+    color: $white;
+    font-family:Lato-Medium;
+  }
 }
+
 
 .card-register {
   max-width: 40rem;
