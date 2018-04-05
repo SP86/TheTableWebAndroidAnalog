@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "bootstrap-slider": "^10.0.0",
     "fullcalendar": "^3.9.0",
     "fullcalendar-scheduler": "^1.9.4",
     "startbootstrap-sb-admin": "^4.0.0"
