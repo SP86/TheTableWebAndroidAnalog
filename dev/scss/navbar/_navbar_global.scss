@@ -23,6 +23,23 @@
       .nav-item {
         position: relative;
         .nav-link {
+          .img_wrap{
+            position: relative;
+            .count{
+              font-family: Lato-Medium;
+              position: absolute;
+              top:-8px;
+              right: -8px;
+              width: 24px;
+              height: 24px;
+              background: #e9307f;
+              border-radius: 12px;
+              color: #fff;
+              text-align: center;
+              font-size: 10px;
+              line-height: 24px;
+            }
+          }
           cursor: pointer;
           color: #fff;
           font-family: Raleway-Bold;

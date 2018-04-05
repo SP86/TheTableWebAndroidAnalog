@@ -27,25 +27,25 @@
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item active">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div><img src="../../../img/calendar_akvive.png"></div>
+          <div class="img_wrap"><img src="../../../img/calendar_akvive.png"></div>
           <span class="nav-link-text pl-4">Календар</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <img src="../../../img/clients_aktive.png">
+          <div class="img_wrap"><img src="../../../img/clients_aktive.png"></div>
           <span class="nav-link-text pl-4">Клієнти</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <img src="../../../img/history_aktive.png">
+          <div class="img_wrap"><span class="count">3</span><img src="../../../img/history_aktive.png"></div>
           <span class="nav-link-text pl-4">Історія</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <img src="../../../img/profile_aktive.png">
+          <div class="img_wrap"><img src="../../../img/profile_aktive.png"></div>
           <span class="nav-link-text pl-4">Профайл</span>
         </a>
       </li>
@@ -152,9 +152,26 @@
   <script src="../../../js/scheduler.min.js"></script>
   <script src="../../../locales/ru.js"></script>
   <script src="../../../js/jquery.easing.min.js"></script>
+  <script src="../../../js/bootstrap-slider.min.js"></script>
   <script src="../../../js/bundle.js"></script>
   <script>
       $(document).ready(function() {
+
+          $('.selected_date_img').on('click', function(event){
+              event.preventDefault();
+              $('#selected_date').focus();
+          });
+
+          $('#selected_date').datepicker({
+              format: "yyyy-mm-dd",
+              autoclose: true,
+              language: 'ru',
+              orientation: "bottom auto" ,
+              todayHighlight: true,
+          }).on('changeDate', function(e) {
+              console.log(e.format(0,"yyyy-mm-dd"));
+          });
+
           $('#profile_bdate').datepicker({
               format: "yyyy-mm-dd",
               autoclose: true,
@@ -163,6 +180,8 @@
               todayHighlight: true,
               endDate: "<?=date('Y-m-d')?>",
           });
+
+
 
           var json_array = '[' +
               '{"id":"1","start":"2018-04-04T12:00:00", "end":"2018-04-04T16:00:00", "title":"event 1" },' +
@@ -218,6 +237,16 @@
                  console.log(e.format(0,"yyyy-mm-dd"));
                   $('#calendar').fullCalendar('gotoDate', e.format(0,"yyyy-mm-dd"));
               });
+
+          $(".time_range_slider").slider({
+               range: true,
+               min: 10,
+               max: 23,
+               value: [11, 13],
+               ticks: [10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20, 20.5, 21, 21.5, 22, 22.5, 23],
+               ticks_labels: ['10', '30', '11', '30', '12', '30','13','30','14','30','15','30','16','30','17','30','18','30','19','30','20','30','21','30','22','30','23'],
+               step: 0.5,
+      });
 
       });
   </script>

@@ -263,6 +263,18 @@ form{
     }
 
   }
+  .selected_date_img{
+    cursor: pointer;
+  }
+  #selected_date{
+    background: transparent;
+    border: none;
+    color: #3f5f99;
+    font-size: 20px;
+    font-family: LatoBold;
+    cursor: pointer;
+  }
+
   .blue_bg{
     background: #f1f6fb;
   }
