@@ -78,11 +78,11 @@
     <div class="col-12 d-flex justify-content-between">
         <a href="#!" class="back_breadcrumb  d-flex align-items-center">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="ml-4">Расписание столика</span>
+            <span class="ml-4">Бронирование стола</span>
         </a>
     </div>
 </div>
-<div class="row pl-4 pr-4 py-4 schedule-info border-bottom">
+<div class="row blue_bg pl-4 pr-4 py-4 schedule-info border-bottom">
     <div class="col-12 col-sm-3 col-md-auto text-center mb-4 mb-sm-0 user-history__img">
         <img src="http://via.placeholder.com/100x150" class="img-fluid"/>
     </div>
@@ -90,54 +90,125 @@
         <p class="mb-2 schedule-info__item">36 (места - 4)</p>
         <p class="mb-2 schedule-info__item">05 апр. 2018 г.</p>
         <p class="mb-2 schedule-info__item">Зона: ВСЕ</p>
+        <p class="mb-2 schedule-info__item">с <span class="schedule_from">15:00</span> до <span class="schedule_to">21:00</span></p>
     </div>
-    <div class="col-12 col-sm d-flex flex-column align-items-center justify-content-center">
-        <div class="schedule-info__period text-center">
-            <p>с <span class="schedule_from">15:00</span> до <span class="schedule_to">21:00</span></p>
-            <button class="custom-btn pink_btn px-5">Выбрать время</button>
+    <div class="col-12 col-sm d-flex align-items-center justify-content-center">
+        <div class="schedule-info__deposit d-flex justify-content-center align-items-center">
+            Депозит: <input type="number" name="deposit_value" value="0">
+        </div>
+        <button class="close-btn d-flex align-items-center bg-transparent border-0">
+            <i class="fa fa-times-circle ml-2" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+<div class="d-flex flex-column align-items-center reservation-buttons">
+    <button class="custom-btn transparent_btn px-5 mt-5 reservation-buttons__item" >Поиск</button>
+    <button class="custom-btn transparent_btn px-5 mt-4 reservation-buttons__item" data-toggle="modal" data-target="#modal_add">Создать профайл</button>
+    <button class="custom-btn transparent_btn px-5 mt-4 reservation-buttons__item">Бронировать инкогнито</button>
+</div>
+
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group custom_form_group">
+                                    <label for="profile_phone"><span class="text-danger">*</span>Создать профайл</label>
+                                    <input type="text" class="form-control phone_mask" id="profile_phone" name="profile_phone" placeholder="380 XX XXX XXXX" data-validation="required" data-validation-error-msg="Введите телефон" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group custom_form_group">
+                                            <label for="profile_name"><span class="text-danger">*</span>Имя</label>
+                                            <input type="text" class="form-control" id="profile_name" name="profile_name" data-validation="required" data-validation-error-msg="Введите имя"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6">
+                                        <div class="form-group custom_form_group">
+                                            <label for="profile_second_name">Фамилия</label>
+                                            <input type="text" class="form-control" id="profile_second_name" name="profile_second_name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group custom_form_group">
+                                    <label for="profile_email">E-mail</label>
+                                    <input type="text" class="form-control" id="profile_email" name="profile_email">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group custom_form_group">
+                                    <label for="profile_bdate">Дата рождения</label>
+                                    <input type="text" class="form-control" id="profile_bdate" name="profile_bdate">
+                                </div>
+                                <div class="form-group custom_form_group">
+                                    <label>Статус</label>
+                                </div>
+                                <div class="form-group" id="star_rating_wrapper">
+                                    <div class="rating">
+                                        <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                                        <label for="star5" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                        <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                                        <label for="star4" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                        <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                                        <label for="star3" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                        <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" checked="checked" />
+                                        <label for="star2" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                        <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                                        <label for="star1" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group custom_form_group">
+                                    <label>Пол</label>
+                                </div>
+                                <div class="form-group custom_radio_group">
+                                    <label>
+                                        <input type="radio" name="options"/>
+                                        <span>Мужской</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="options"/>
+                                        <span>Женский</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group custom_form_group">
+                                    <label>Примерный возраст</label>
+                                </div>
+                                <div class="form-group custom_radio_group">
+                                    <label>
+                                        <input type="radio" name="approximate_age"/>
+                                        <span>18-25</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="approximate_age"/>
+                                        <span>26-35</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="approximate_age"/>
+                                        <span>36-50</span>
+                                    </label>
+                                </div>
+                                <input type="submit" class="custom-btn pink_btn float-right" value="Создать" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<form class="row mt-3">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="form-group custom_checkbox_group">
-            <label>
-                <input type="checkbox" name="schedule_time[]" disabled="disabled"/>
-                <span>10:00</span>
-            </label>
-            <label>
-                <input type="checkbox" name="schedule_time[]" disabled="disabled"/>
-                <span>10:30</span>
-            </label>
-            <label>
-                <input type="checkbox" name="schedule_time[]"/>
-                <span>11:00</span>
-            </label>
-            <label>
-                <input type="checkbox" name="schedule_time[]"/>
-                <span>11:30</span>
-            </label>
-            <div class="reserved-item d-flex flex-column justify-content-between">
-                <span class="reserved-item__time pb-2">12:00-12:30</span>
-                <span class="reserved-item__client pb-2">Діма Богонос</span>
-                <span class="reserved-item__phone">3806895962142</span>
-            </div>
-            <label>
-                <input type="checkbox" name="schedule_time[]"/>
-                <span>13:00</span>
-            </label>
-            <label>
-                <input type="checkbox" name="schedule_time[]"/>
-                <span>13:30</span>
-            </label>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">2</div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">3</div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">4</div>
-</form>
-
-
 
 
   </div>

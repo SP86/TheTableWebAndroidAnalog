@@ -79,6 +79,10 @@ a{
   background: transparent;
   border: 1px solid #3f5f99;
   color: #3f5f99;
+  &:hover{
+    background: #3f5f99;
+    color: #fff;
+  }
 }
 .white_btn{
   background: #fff;
@@ -255,6 +259,25 @@ form{
   }
 }
 
+.reserved-item{
+  font-family:LatoBold;
+  min-height: 80px;
+  border-radius: 8px;
+  border:2px solid #c6d6e6;
+  margin-bottom: 12px;
+  background: #f1f6fb;
+  padding: 15px;
+  &__time{
+    font-size: 18px;
+  }
+  &__client, &__phone{
+    font-size: 14px;
+  }
+
+
+
+}
+
 #star_rating_wrapper{
   .hide {
     display: none;
@@ -405,7 +428,33 @@ form{
     .schedule-info{
       font-family: Lato-Medium;
       font-size: 18px;
+      &__deposit{
+        height: 60px;
+        width:270px;
+        border-radius:100px;
+        background: #fff;
+        input{
+          border: none;
+          width: 80px;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          color: #3f7099;
+        }
+      }
+      &__deposit + button{
+        i{
+          font-size: 42px;
+        }
+
+      }
     }
+
+  .reservation-buttons{
+    &__item{
+      min-width: 250px;
+    }
+  }
 
   /* --------------*/
 
