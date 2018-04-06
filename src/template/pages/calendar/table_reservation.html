@@ -104,7 +104,7 @@
 <div class="d-flex flex-column align-items-center reservation-buttons">
     <button class="custom-btn transparent_btn px-5 mt-5 reservation-buttons__item" data-toggle="modal" data-target="#modal_search">Поиск</button>
     <button class="custom-btn transparent_btn px-5 mt-4 reservation-buttons__item" data-toggle="modal" data-target="#modal_add">Создать профайл</button>
-    <button class="custom-btn transparent_btn px-5 mt-4 reservation-buttons__item">Бронировать инкогнито</button>
+    <button class="custom-btn transparent_btn px-5 mt-4 reservation-buttons__item" data-toggle="modal" data-target="#modal_incognito" >Бронировать инкогнито</button>
 </div>
 
 <div class="modal fade" id="modal_search" tabindex="-1" role="dialog" aria-hidden="true">
@@ -262,6 +262,61 @@
                                     </label>
                                 </div>
                                 <input type="submit" class="custom-btn pink_btn float-right" value="Создать" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade incognito" id="modal_incognito" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row border-bottom">
+                        <div class="col-12 incognito__title py-3 text-center">Подтвердить бронирование</div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 incognito__tbl-image py-3 d-flex justify-content-end align-items-center" id="incognito_table_img">
+                            <img src="http://via.placeholder.com/100x140" class="img-fluid"/>
+                        </div>
+                        <div class="col-6 incognito__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p id="incognito_table" class="mb-1">80 (места - 2)</p>
+                            <p id="incognito_date" class="mb-1">06 апр. 2018 г.</p>
+                            <p id="incognito_zone" class="mb-1">Зона: Основний зал</p>
+                            <p class="mb-1">с <span id="incognito_from">15:30</span> до <span id="incognito_to">16:00</span></p>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 incognito__incg-image py-3 d-flex justify-content-end align-items-center"><img src="http://via.placeholder.com/80x80" class="img-fluid rounded-circle"/></div>
+                        <div class="col-6 incognito__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p class="mb-1">ANONYMOUS</p>
+                            <p class="mb-1 small">ANONYMOUS</p>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 d-flex py-3 align-items-center">
+                            <button class="custom-btn pink_btn w-100" data-dismiss="modal" aria-label="Close">Отменить</button>
+                        </div>
+                        <div class="col-6 d-flex py-3 align-items-center">
+                            <button type="submit" form="incognito_form" class="custom-btn blue_btn w-100" id="incognito_submit">Подтвердить</button>
+                        </div>
+                    </div>
+                    <form id="incognito_form" class="incognito__deposit">
+                        <div class="row py-3">
+                            <label for="incognito_deposit_value" class="col-4 mb-0 d-flex align-items-center justify-content-end">Депозит:</label>
+                            <div class="col-8">
+                                <input type="number" class="form-control text-center incognito_deposit_value" id="incognito_deposit_value" name="incognito_deposit_value" value="0"/>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <label for="incognito_deposit_comment" class="col-4 mb-0 d-flex align-items-center justify-content-end">Комментарий:</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control incognito_deposit_comment" id="incognito_deposit_comment" name="incognito_deposit_comment" value=""/>
                             </div>
                         </div>
                     </form>

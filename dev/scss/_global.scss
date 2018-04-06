@@ -626,6 +626,36 @@ form{
   }
   /* --------- */
 
+  .incognito{
+    font-family: Lato-Medium;
+    &__title{
+      font-size:22px;
+    }
+    &__tbl-info{
+      font-size:18px;
+    }
+    &__deposit{
+      label{
+        font-size:18px;
+        color:#3f5f99;
+      }
+      input{
+        font-family: LatoBold;
+        color:#3f7099;
+      }
+      .incognito_deposit_value{
+        max-width: 200px;
+        border:1px solid #c6d6e6;
+        border-radius: 20px;
+        font-size:18px;
+      }
+      .incognito_deposit_comment{
+        border: none;
+        border-bottom: 1px solid #dde6ef;
+      }
+    }
+  }
+
 }
 
 // Scroll to top button
