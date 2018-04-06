@@ -25,6 +25,9 @@ body.fixed-nav {
 a{
   color:#3f5f99;
 }
+.cursor_pointer{
+  cursor: pointer;
+}
 .gray_text{
   color: $gray-600 !important;
 }
@@ -273,12 +276,14 @@ form{
   &__client, &__phone{
     font-size: 14px;
   }
-
-
-
+  &:hover{
+    &__time{
+      text-decoration: none;
+    }
+  }
 }
 
-#star_rating_wrapper{
+#star_rating_wrapper, .star_rating_wrapper{
   .hide {
     display: none;
   }
@@ -391,6 +396,9 @@ form{
         font-family: Raleway-Medium !important;
         font-size: 16px!important ;
       }
+    }
+    input.modal_search{
+      border-bottom: 1px solid #25c887;
     }
     .full{
       @include media-breakpoint-up(md){
