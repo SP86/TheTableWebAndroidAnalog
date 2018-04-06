@@ -25,6 +25,9 @@ body.fixed-nav {
 a{
   color:#3f5f99;
 }
+.spiner-container{
+  min-height: calc(100vh - $navbar-base-height);
+}
 .cursor_pointer{
   cursor: pointer;
 }
