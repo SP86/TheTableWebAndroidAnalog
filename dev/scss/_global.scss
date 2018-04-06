@@ -26,7 +26,7 @@ a{
   color:#3f5f99;
 }
 .spiner-container{
-  min-height: calc(100vh - $navbar-base-height);
+  min-height: calc(100vh - #{$navbar-base-height});
 }
 .cursor_pointer{
   cursor: pointer;
@@ -332,7 +332,16 @@ form{
   }
 }
 
+.flex_grow_1{
+  flex-grow: 1;
+}
+
 .content-wrapper {
+  > .container-fluid{
+    min-height: calc(100vh - #{$sticky-footer-height});
+    display: flex;
+    flex-direction: column;
+  }
   background: #f8f9fa;
   min-height: calc(100vh - #{$sticky-footer-height});
   .back_breadcrumb{
