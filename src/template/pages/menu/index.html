@@ -83,59 +83,114 @@
 <div class="row min_height_calc">
     <div class="col-4">
         <div class="row h-100 menu_nav_columns">
-            <div class="col-6 border-right menu_categories">
-                <div class="menu_nav_columns__title py-3 d-flex justify-content-between align-items-center border-bottom">
+            <div class="col-6 border-right menu_categories p-0">
+                <div class="menu_nav_columns__title p-3 d-flex justify-content-between align-items-center border-bottom">
                     <span>Категории</span>
                     <i class="fa fa-plus-circle cursor_pointer" aria-hidden="true" data-toggle="modal" data-target=".category_modal"></i>
                 </div>
-                <div class="menu_categories__item d-flex align-items-center py-2">
+                <div class="menu_categories__item px-3 py-2 d-flex align-items-center">
                     <i class="fa fa-bars mr-2" aria-hidden="true"></i>
                     <span class="name">Breakfast</span>
-                    <span class="fa-stack cursor_pointer ml-auto">
+                    <span class="fa-stack cursor_pointer ml-auto" data-toggle="modal" data-target=".category_modal">
                        <i class="fa fa-circle fa-stack-2x"></i>
                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
-                <div class="menu_categories__item d-flex align-items-center py-2 menu_categories__item_active">
+                <div class="menu_categories__item px-3 py-2 d-flex align-items-center menu_categories__item_active">
                     <i class="fa fa-bars mr-2" aria-hidden="true"></i>
                     <span class="name">Раки</span>
-                    <span class="fa-stack cursor_pointer ml-auto">
+                    <span class="fa-stack cursor_pointer ml-auto" data-toggle="modal" data-target=".category_modal">
                        <i class="fa fa-circle fa-stack-2x"></i>
                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
-                <div class="menu_categories__item d-flex align-items-center py-2 menu_categories__item_active">
+                <div class="menu_categories__item px-3 py-2 d-flex align-items-center">
                     <i class="fa fa-bars mr-2" aria-hidden="true"></i>
                     <span class="name">Хіти Грузинської кухні минулого сторічча</span>
-                    <span class="fa-stack cursor_pointer ml-auto">
+                    <span class="fa-stack cursor_pointer ml-auto" data-toggle="modal" data-target=".category_modal">
                        <i class="fa fa-circle fa-stack-2x"></i>
                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
             </div>
-            <div class="col-6 border-right menu_category_items">
-                <div class="menu_nav_columns__title py-3 d-flex justify-content-between align-items-center border-bottom">
+            <div class="col-6 border-right dishes p-0">
+                <div class="menu_nav_columns__title p-3 d-flex justify-content-between align-items-center border-bottom">
                     <span>Блюда</span>
-                    <i class="fa fa-plus-circle cursor_pointer" aria-hidden="true"></i>
+                    <i class="fa fa-plus-circle cursor_pointer" aria-hidden="true" data-toggle="modal" data-target=".dish_modal"></i>
+                </div>
+                <div class="dishes__item px-3 py-2 d-flex align-items-center dishes__item_active">
+                    <span class="name">Вареники</span>
+                    <span class="price ml-auto">120</span>
+                </div>
+                <div class="dishes__item px-3 py-2 d-flex align-items-center">
+                    <span class="name">Куряча котлета по Київськи</span>
+                    <span class="price ml-auto">220</span>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-8">
-        3
+        <div class="row preorder py-3">
+            <div class="col-3">
+                <div class="preorder__label">Фото</div>
+                <img src="http://via.placeholder.com/190x120" class="img-fluid preorder__main-img"/>
+            </div>
+            <div class="col-6">
+                <div class="preorder__label">Название</div>
+                <h1 class="preorder__title">Омлет з фермерським курчам та моцарелою</h1>
+            </div>
+            <div class="col-3">
+                <div class="preorder__label">Опубликовано</div>
+                <label class="switch mt-2">
+                    <input type="checkbox" name="status" checked="checked">
+                    <span class="slider switcher round"></span>
+                </label>
+            </div>
+        </div>
     </div>
 </div>
 
 
 <div class="modal fade category_modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content rounded-0 border-0">
             <div class="modal-body">
                 <div class="container-fluid">
                     <form>
                         <div class="form-group custom_form_group">
-                            <label for="profile_second_name" class="h5 text-blue">Название категории</label>
-                            <input type="text" class="form-control border-bottom-green" id="profile_second_name" name="profile_second_name">
+                            <label for="category_name" class="h5 text-blue">Название категории</label>
+                            <input type="text" class="form-control" id="category_name" name="category_name">
+                        </div>
+                        <input type="submit" class="custom-btn pink_btn mx-auto" value="Сохранить" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade dish_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0 border-0">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-group custom_form_group">
+                            <label for="dish_category" class="h6 text-blue">Категория:</label>
+                            <select class="form-control border-0 m-0 p-0 font_size_22 color_custom_blue" id="dish_category" name="dish_category">
+                                <option selected="selected">Breakfast</option>
+                                <option>Раки</option>
+                                <option>Закуски</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group custom_form_group">
+                            <label for="dish_name" class="h6 text-blue">Название блюда:</label>
+                            <input type="text" class="form-control" id="dish_name" name="dish_name">
+                        </div>
+                        <div class="form-group custom_form_group">
+                            <label for="dish_price" class="h6 text-blue">Цена:</label>
+                            <input type="text" class="form-control" id="dish_price" name="dish_price">
                         </div>
                         <input type="submit" class="custom-btn pink_btn mx-auto" value="Сохранить" />
                     </form>

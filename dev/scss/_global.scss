@@ -152,6 +152,11 @@ form{
     cursor: pointer;
   }
 }
+
+.custom_select{
+
+}
+
 .help-block.form-error{
   color: $red;
 }
@@ -688,15 +693,22 @@ form{
       }
     }
   }
-  .menu_categories{
+  .menu_categories, .dishes{
     &__item{
       font-size:16px;
+      &_active{
+        background:#f1f6fb;
+      }
       .name{
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 80%;
+        width: 75%;
+      }
+      .price{
+        font-size:16px;
+        font-family: LatoBold;
       }
       .fa-stack{
         width: 1.6em;
@@ -712,12 +724,80 @@ form{
     }
   }
 
-  .category_modal{
+  .preorder{
+    &__label{
+      opacity: 0.5;
+      font-size: 16px;
+      font-family: Raleway-Medium;
+      margin-bottom: 10px;
+    }
+    &__main-img{
+      border: 5px solid #dde6ef;
+    }
+    &__title{
+      font-family: LatoBold;
+      font-size:30px;
+      letter-spacing:0;
+    }
+  }
+
+  .category_modal, .dish_modal{
     input[type="submit"]{
       font-size: 18px;
     }
   }
 
+  /*-----*/
+
+  /* Switcher*/
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 16px;
+  }
+
+  .switch input {display:none;}
+
+  .slider.switcher {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider.switcher:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 0px;
+    bottom: -4px;
+    background-color: #b8b8b8;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider.switcher:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+    background-color: #2fb783;
+  }
+
+  .slider.switcher.round {
+    border-radius: 16px;
+  }
+
+  .slider.switcher.round:before {
+    border-radius: 50%;
+  }
   /*-----*/
 
 }
