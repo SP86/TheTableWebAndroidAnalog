@@ -13,3 +13,4 @@ http://web-android.itpromotion.com.ua/template/pages/clients/clients_grid.html<b
 http://web-android.itpromotion.com.ua/template/pages/clients/clients_list.html<br/>
 http://web-android.itpromotion.com.ua/template/pages/history/history_list.html<br/>
 http://web-android.itpromotion.com.ua/template/pages/history/single_client_history.html<br/>  
+http://web-android.itpromotion.com.ua/template/pages/menu/index.html<br/>
