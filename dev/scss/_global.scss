@@ -19,6 +19,10 @@ body.sticky-footer {
   }
 }
 
+.min_height_calc{
+  min-height: calc(100vh - #{$sticky-footer-height});
+}
+
 body.fixed-nav {
   padding-top: $navbar-base-height;
 }
@@ -62,6 +66,11 @@ a{
   }
 
 }
+
+.text-blue{
+  color: #3f5f99 !important;
+}
+
 .blue_btn{
   background: #3f5f99;
   color: #fff;
@@ -136,7 +145,7 @@ a{
   }
 }
 .border-bottom-green{
-  border-bottom: 1px solid #25c887;
+  border-bottom: 1px solid #25c887 !important;
 }
 form{
   input[type="submit"]{
@@ -638,7 +647,7 @@ form{
   }
   /* --------- */
 
-  .incognito{
+  .incognito, .confirmation, .success{
     font-family: Lato-Medium;
     &__title{
       font-size:22px;
@@ -655,18 +664,61 @@ form{
         font-family: LatoBold;
         color:#3f7099;
       }
-      .incognito_deposit_value{
+      .deposit_value{
         max-width: 200px;
         border:1px solid #c6d6e6;
         border-radius: 20px;
         font-size:18px;
       }
-      .incognito_deposit_comment{
+      .deposit_comment{
         border: none;
         border-bottom: 1px solid #dde6ef;
       }
     }
   }
+
+  /* Menu */
+
+  .menu_nav_columns{
+    &__title{
+      font-family: Raleway-Bold;
+      font-size:16px;
+      i{
+        font-size: 24px;
+      }
+    }
+  }
+  .menu_categories{
+    &__item{
+      font-size:16px;
+      .name{
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 80%;
+      }
+      .fa-stack{
+        width: 1.6em;
+        height: 1.6em;
+        line-height:1.6em;
+        .fa-stack-2x{
+          font-size: 1.6em;
+        }
+        .fa-stack-1x{
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+  .category_modal{
+    input[type="submit"]{
+      font-size: 18px;
+    }
+  }
+
+  /*-----*/
 
 }
 

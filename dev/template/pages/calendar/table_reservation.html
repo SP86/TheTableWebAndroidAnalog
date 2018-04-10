@@ -15,12 +15,12 @@
     <div class="col-12 col-sm-auto d-flex flex-column justify-content-center">
         <p class="mb-2 schedule-info__item">36 (места - 4)</p>
         <p class="mb-2 schedule-info__item">05 апр. 2018 г.</p>
-        <p class="mb-2 schedule-info__item">Зона: ВСЕ</p>
-        <p class="mb-2 schedule-info__item">с <span class="schedule_from">15:00</span> до <span class="schedule_to">21:00</span></p>
+        <p class="mb-2 schedule-info__item">Зона: <span id="schedule_zone">ВСЕ</span></p>
+        <p class="mb-2 schedule-info__item">с <span id="schedule_from">15:00</span> до <span id="schedule_to">21:00</span></p>
     </div>
     <div class="col-12 col-sm d-flex align-items-center justify-content-center">
         <div class="schedule-info__deposit d-flex justify-content-center align-items-center">
-            Депозит: <input type="number" name="deposit_value" value="0">
+            Депозит: <input type="number" min="0" name="deposit_value" value="0">
         </div>
         <button class="close-btn d-flex align-items-center bg-transparent border-0">
             <i class="fa fa-times-circle ml-2" aria-hidden="true"></i>
@@ -79,7 +79,7 @@
                                               <i class="fa fa-circle fa-stack-2x"></i>
                                               <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                             </span>
-                                            <button class="custom-btn blue_btn mr-3" id="book_from_search_modal">Бронировать</button>
+                                            <button class="custom-btn blue_btn mr-3" data-toggle="modal" data-target="#modal_confirmation" data-dismiss="modal">Бронировать</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -213,12 +213,12 @@
                         <div class="col-6 incognito__tbl-info py-3 d-flex flex-column justify-content-center">
                             <p id="incognito_table" class="mb-1">80 (места - 2)</p>
                             <p id="incognito_date" class="mb-1">06 апр. 2018 г.</p>
-                            <p id="incognito_zone" class="mb-1">Зона: Основний зал</p>
+                            <p class="mb-1">Зона: <span id="incognito_zone">Основний зал</span></p>
                             <p class="mb-1">с <span id="incognito_from">15:30</span> до <span id="incognito_to">16:00</span></p>
                         </div>
                     </div>
                     <div class="row border-bottom">
-                        <div class="col-6 incognito__incg-image py-3 d-flex justify-content-end align-items-center"><img src="http://via.placeholder.com/80x80" class="img-fluid rounded-circle"/></div>
+                        <div class="col-6 incognito__user-image py-3 d-flex justify-content-end align-items-center"><img src="http://via.placeholder.com/80x80" class="img-fluid rounded-circle"/></div>
                         <div class="col-6 incognito__tbl-info py-3 d-flex flex-column justify-content-center">
                             <p class="mb-1">ANONYMOUS</p>
                             <p class="mb-1 small">ANONYMOUS</p>
@@ -236,16 +236,118 @@
                         <div class="row py-3">
                             <label for="incognito_deposit_value" class="col-4 mb-0 d-flex align-items-center justify-content-end">Депозит:</label>
                             <div class="col-8">
-                                <input type="number" class="form-control text-center incognito_deposit_value" id="incognito_deposit_value" name="incognito_deposit_value" value="0"/>
+                                <input type="number" min="0" class="form-control text-center deposit_value" id="incognito_deposit_value" name="incognito_deposit_value" value="0"/>
                             </div>
                         </div>
                         <div class="row py-3">
                             <label for="incognito_deposit_comment" class="col-4 mb-0 d-flex align-items-center justify-content-end">Комментарий:</label>
                             <div class="col-8">
-                                <input type="text" class="form-control incognito_deposit_comment" id="incognito_deposit_comment" name="incognito_deposit_comment" value=""/>
+                                <input type="text" class="form-control deposit_comment" id="incognito_deposit_comment" name="incognito_deposit_comment" value=""/>
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade confirmation" id="modal_confirmation" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row border-bottom">
+                        <div class="col-12 confirmation__title py-3 text-center">Подтвердить бронирование</div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 confirmation__tbl-image py-3 d-flex justify-content-end align-items-center" id="confirmation_table_img">
+                            <img src="http://via.placeholder.com/100x140" class="img-fluid"/>
+                        </div>
+                        <div class="col-6 confirmation__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p id="confirmation_table" class="mb-1">80 (места - 2)</p>
+                            <p id="confirmation_date" class="mb-1">06 апр. 2018 г.</p>
+                            <p class="mb-1">Зона: <span id="confirmation_zone">Основний зал</span></p>
+                            <p class="mb-1">с <span id="confirmation_from">15:30</span> до <span id="confirmation_to">16:00</span></p>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 confirmation__user-image py-3 d-flex justify-content-end align-items-center"><img src="http://via.placeholder.com/80x80" class="img-fluid rounded-circle"/></div>
+                        <div class="col-6 confirmation__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p class="mb-1" id="confirmation_name">Діма Богонос</p>
+                            <p class="mb-1 small" id="confirmation_phone">80975625412</p>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 d-flex py-3 align-items-center">
+                            <button class="custom-btn pink_btn w-100" data-dismiss="modal" aria-label="Close">Отменить</button>
+                        </div>
+                        <div class="col-6 d-flex py-3 align-items-center">
+                            <button type="submit" form="incognito_form" class="custom-btn blue_btn w-100" id="confirmation_submit" data-toggle="modal" data-target="#modal_success" data-dismiss="modal">Подтвердить</button>
+                        </div>
+                    </div>
+                    <form id="confirmation_form" class="confirmation__deposit">
+                        <div class="row py-3">
+                            <label for="confirmation_deposit_value" class="col-4 mb-0 d-flex align-items-center justify-content-end">Депозит:</label>
+                            <div class="col-8">
+                                <input type="number" min="0" class="form-control text-center deposit_value" id="confirmation_deposit_value" name="incognito_deposit_value" value="0"/>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <label for="confirmation_deposit_comment" class="col-4 mb-0 d-flex align-items-center justify-content-end">Комментарий:</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control deposit_comment" id="confirmation_deposit_comment" name="confirmation_deposit_comment" value=""/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade success" id="modal_success" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row border-bottom">
+                        <div class="col-12 success__title py-3 text-center">Поздравляем, бронирование подтверждено!</div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 success__user-image py-3 d-flex justify-content-end align-items-center"><img src="http://via.placeholder.com/80x80" class="img-fluid rounded-circle"/></div>
+                        <div class="col-6 success__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p class="mb-1" id="success_name">Діма Богонос</p>
+                            <p class="mb-1 small" id="success_phone">80975625412</p>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6 success__tbl-image py-3 d-flex justify-content-end align-items-center" id="success_table_img">
+                            <img src="http://via.placeholder.com/100x140" class="img-fluid"/>
+                        </div>
+                        <div class="col-6 success__tbl-info py-3 d-flex flex-column justify-content-center">
+                            <p id="success_table" class="mb-1">80 (места - 2)</p>
+                            <p id="success_date" class="mb-1">06 апр. 2018 г.</p>
+                            <p class="mb-1">Зона: <span id="success_zone">Основний зал</span></p>
+                            <p class="mb-1">с <span id="success_from">15:30</span> до <span id="success_to">16:00</span></p>
+                        </div>
+                    </div>
+                    <form id="success_form" class="success__deposit">
+                        <div class="row py-3">
+                            <label for="success_deposit_value" class="col-4 mb-0 d-flex align-items-center justify-content-end">Депозит:</label>
+                            <div class="col-8">
+                                <input type="number" min="0" class="form-control text-center deposit_value" id="success_deposit_value" name="incognito_deposit_value" value="0"/>
+                            </div>
+                        </div>
+                    </form>
+                        <div class="row pb-3">
+                            <button class="custom-btn transparent_btn mt-3 w-100" id="success_send_sms">Отправить СМС запрос на оплату депозита</button>
+                            <button class="custom-btn transparent_btn mt-3 w-100" id="success_copy">Копировать послание на оплату</button>
+                        </div>
+                        <div class="row pb-3">
+                            <button class="custom-btn blue_btn mt-3 w-100" id="success_return_to_work">Вернуться к работе</button>
+                        </div>
+
                 </div>
             </div>
         </div>

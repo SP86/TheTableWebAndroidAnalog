@@ -1,0 +1,68 @@
+<!-- @@master = /layout/app.html-->
+<!-- @@block = content -->
+<div class="row min_height_calc">
+    <div class="col-4">
+        <div class="row h-100 menu_nav_columns">
+            <div class="col-6 border-right menu_categories">
+                <div class="menu_nav_columns__title py-3 d-flex justify-content-between align-items-center border-bottom">
+                    <span>Категории</span>
+                    <i class="fa fa-plus-circle cursor_pointer" aria-hidden="true" data-toggle="modal" data-target=".category_modal"></i>
+                </div>
+                <div class="menu_categories__item d-flex align-items-center py-2">
+                    <i class="fa fa-bars mr-2" aria-hidden="true"></i>
+                    <span class="name">Breakfast</span>
+                    <span class="fa-stack cursor_pointer ml-auto">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="menu_categories__item d-flex align-items-center py-2 menu_categories__item_active">
+                    <i class="fa fa-bars mr-2" aria-hidden="true"></i>
+                    <span class="name">Раки</span>
+                    <span class="fa-stack cursor_pointer ml-auto">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="menu_categories__item d-flex align-items-center py-2 menu_categories__item_active">
+                    <i class="fa fa-bars mr-2" aria-hidden="true"></i>
+                    <span class="name">Хіти Грузинської кухні минулого сторічча</span>
+                    <span class="fa-stack cursor_pointer ml-auto">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-6 border-right menu_category_items">
+                <div class="menu_nav_columns__title py-3 d-flex justify-content-between align-items-center border-bottom">
+                    <span>Блюда</span>
+                    <i class="fa fa-plus-circle cursor_pointer" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        3
+    </div>
+</div>
+
+
+<div class="modal fade category_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-group custom_form_group">
+                            <label for="profile_second_name" class="h5 text-blue">Название категории</label>
+                            <input type="text" class="form-control border-bottom-green" id="profile_second_name" name="profile_second_name">
+                        </div>
+                        <input type="submit" class="custom-btn pink_btn mx-auto" value="Сохранить" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- @@close -->
