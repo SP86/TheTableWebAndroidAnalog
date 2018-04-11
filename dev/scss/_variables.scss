@@ -37,10 +37,13 @@ $sidenav-collapsed-width: 130px;
 $sticky-footer-height: 86px;
 
 .font_size_16{
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .font_size_22{
-  font-size: 22px;
+  font-size: 22px !important;
+}
+.font_lato_bold{
+  font-family:LatoBold;
 }
 .color_custom_blue{
   color: $custom_blue !important;
