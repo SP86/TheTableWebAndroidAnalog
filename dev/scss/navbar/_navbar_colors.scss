@@ -66,7 +66,10 @@
       }
       > .nav-item {
         > .nav-link {
-          color: fade-out($custom_blue, 0.6);
+          @include media-breakpoint-up(lg) {
+            color: fade-out($custom_blue, 0.6);
+          }
+          color: fade-out($white, 0.6);
           &:hover {
             color: $custom_blue;
             img{
@@ -91,7 +94,10 @@
       }
       > .nav-item.active {
         > .nav-link {
-          color: $custom_blue !important;
+          @include media-breakpoint-up(lg){
+            color: $custom_blue !important;
+          }
+          color: $white !important;
           img{
             opacity: 1;
           }

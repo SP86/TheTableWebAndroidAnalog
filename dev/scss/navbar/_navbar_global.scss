@@ -10,7 +10,10 @@
   text-transform: uppercase;
   .navbar-brand{
     color: #fff;
-    margin-left: auto;
+    @include media-breakpoint-up(lg){
+      margin-left: auto;
+    }
+
     padding: 20px 0;
   }
   .navbar-collapse {
@@ -25,6 +28,10 @@
         .nav-link {
           .img_wrap{
             position: relative;
+            min-width: 50px;
+            img{
+              margin: 0 auto;
+            }
             .count{
               font-family: Lato-Medium;
               position: absolute;

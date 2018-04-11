@@ -21,43 +21,62 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top header" id="mainNav">
   <div class="navbar-brand" href="index.html">Eshak</div>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item active">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><img src="../../../img/calendar_akvive.png"></div>
+          <div class="img_wrap">
+            <img src="../../../img/calendar_white_akvive.png" class="d-lg-none">
+            <img src="../../../img/calendar_akvive.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Календар</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><img src="../../../img/chekin_aktiv.png"></div>
+          <div class="img_wrap">
+            <img src="../../../img/chekin_white_aktiv.png" class="d-lg-none">
+            <img src="../../../img/chekin_aktiv.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Check-in</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><img src="../../../img/clients_aktive.png"></div>
+          <div class="img_wrap">
+            <img src="../../../img/clients_white_aktive.png" class="d-lg-none">
+            <img src="../../../img/clients_aktive.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Клієнти</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><span class="count">3</span><img src="../../../img/history_aktive.png"></div>
+          <div class="img_wrap">
+            <span class="count">3</span>
+            <img src="../../../img/history_white_aktive.png" class="d-lg-none">
+            <img src="../../../img/history_aktive.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Історія</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><img src="../../../img/profile_aktive.png"></div>
+          <div class="img_wrap">
+            <img src="../../../img/profile_white_aktive.png" class="d-lg-none">
+            <img src="../../../img/profile_aktive.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Профайл</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-left d-flex align-items-center pl-lg-5" href="../../../template/pages/table.html">
-          <div class="img_wrap"><img src="../../../img/menu_aktive.png"></div>
+          <div class="img_wrap">
+            <img src="../../../img/menu_white_aktive.png" class="d-lg-none">
+            <img src="../../../img/menu_aktive.png" class="d-none d-lg-block">
+          </div>
           <span class="nav-link-text pl-4">Меню</span>
         </a>
       </li>
@@ -129,8 +148,8 @@
             </div>
         </div>
     </div>
-    <div class="col-8">
-        <div class="row preorder py-3">
+    <form class="col-8 preorder">
+        <div class="row py-3 border-bottom">
             <div class="col-3">
                 <div class="preorder__label">Фото</div>
                 <img src="http://via.placeholder.com/190x120" class="img-fluid preorder__main-img"/>
@@ -147,7 +166,115 @@
                 </label>
             </div>
         </div>
-    </div>
+        <div class="row pb-3 border-bottom">
+            <div class="col-auto">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label for="preorder_lateness" class="preorder__label color_custom_blue">Запізнення (хв)</label>
+                    <input type="text" class="form-control" id="preorder_lateness" name="preorder_lateness"/>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label for="preorder_penalty" class="preorder__label color_custom_blue">Штраф (грн)</label>
+                    <input type="text" class="form-control" id="preorder_penalty" name="preorder_penalty"/>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label for="preorder_price_value" class="preorder__label color_custom_blue">Ціна (грн)</label>
+                    <select class="form-control border-0 m-0 p-0 color_custom_blue bg-transparent preorder__label" id="preorder_price_type" name="preorder_price_type">
+                        <option selected="selected">за 100 гр</option>
+                        <option>за штуку</option>
+                        <option>порція</option>
+                    </select>
+                    <input type="text" class="form-control" id="preorder_price_value" name="preorder_price_value"/>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label for="preorder_weight" class="preorder__label color_custom_blue">Вес</label>
+                    <input type="text" class="form-control" id="preorder_weight" name="preorder_weight"/>
+                </div>
+            </div>
+        </div>
+        <div class="row py-3 border-bottom">
+            <div class="col-12 preorder_params_list d-flex align-items-center">
+                <span class="font mr-3">Параметры:</span>
+                <button class="custom-btn transparent_btn cursor_pointer mr-3 d-flex justify-content-between align-items-center" id="preorder_choice_btn" data-toggle="modal" data-target=".params_modal" type="button">Выбор <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                <button class="custom-btn transparent_btn cursor_pointer mr-3 d-flex justify-content-between align-items-center" id="preorder_griup_btn" type="button">Группа <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                <button class="custom-btn transparent_btn cursor_pointer mr-3 d-flex justify-content-between align-items-center" id="preorder_weight_btn" type="button">Вес <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+        <!-- Dynamic params tables -->
+        <div class="row blue_bg py-2 my-3">
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Название</label>
+                    <div class="preorder_param_name font_size_22">тест</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Тип параметра</label>
+                    <div class="preorder_param_type font_size_22">Выбор</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Цена</label>
+                    <div class="preorder_param_type font_size_22">Добавление к базовой</div>
+                </div>
+            </div>
+
+            <div class="table-responsive mt-3">
+                <table class="table custom_table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Название</th>
+                        <th>Значение</th>
+                        <th>Результат</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>тест</th>
+                        <td>258</td>
+                        <td>
+                            <div class="d-flex justify-content-between align-items-center">
+                                398
+                                <button class="close-btn d-flex align-items-center bg-transparent border-0" type="button">
+                                    <i class="fa fa-times-circle ml-2" aria-hidden="true"></i>
+                                </button>
+                             </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 comment_wrapper d-flex justify-content-between align-items-center mb-4">
+                <textarea class="form-control rounded-0 mr-3"  rows="1"></textarea>
+                <button class="close-btn d-flex align-items-center bg-transparent border-0" type="button">
+                    <i class="fa fa-times-circle ml-2" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-12 table_buttons_wrapper d-flex justify-content-end align-items-center mb-3">
+                <button type="button" class="custom-btn blue_btn mr-auto">Комментарий</button>
+                <button type="button" class="custom-btn pink_btn mr-3">Удалить</button>
+                <button type="button" class="custom-btn blue_btn">Добавить</button>
+            </div>
+        </div>
+        <!--  -->
+        <div class="row py-3 border-bottom">
+            <div class="col-12">
+                <div class="form-group custom_form_group">
+                    <label for="preorder_text_desc" class="preorder__label color_custom_blue">Текстовое описание</label>
+                    <textarea class="form-control border-0 border-bottom border-bottom-green rounded-0" id="preorder_text_desc" rows="1"></textarea>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="custom-btn pink_btn mx-auto my-3 px-5" value="Сохранить" />
+    </form>
 </div>
 
 
@@ -191,6 +318,36 @@
                         <div class="form-group custom_form_group">
                             <label for="dish_price" class="h6 text-blue">Цена:</label>
                             <input type="text" class="form-control" id="dish_price" name="dish_price">
+                        </div>
+                        <input type="submit" class="custom-btn pink_btn mx-auto" value="Сохранить" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade params_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0 border-0">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-group custom_form_group row">
+                            <label for="params_price_type" class="col-5 h6 font_size_16 text-blue col-form-label">Категория:</label>
+                            <div class="col-7">
+                                <select class="form-control border-0 m-0 p-0 font_size_16 color_custom_blue" id="params_price_type">
+                                    <option selected="selected">Додавання до базової</option>
+                                    <option>Зміна базової</option>
+                                    <option>Без змін</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group custom_form_group row">
+                            <label for="params_name" class="col-5 font_size_16 h6 text-blue col-form-label">Название блюда:</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control font_size_16" id="params_name" value="">
+                            </div>
                         </div>
                         <input type="submit" class="custom-btn pink_btn mx-auto" value="Сохранить" />
                     </form>
