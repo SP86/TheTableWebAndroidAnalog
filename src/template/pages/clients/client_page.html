@@ -142,8 +142,200 @@
        </div>
     </div>
 </div>
-<div class="row blue_bg p-4">
-    tabs
+<div class="row blue_bg p-2">
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-actives-tab" data-toggle="pill" href="#pills-actives-wrap" role="tab" aria-controls="pills-actives-wrap" aria-selected="true">Активные</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-archives-tab" data-toggle="pill" href="#pills-archives-wrap" role="tab" aria-controls="pills-archives-wrap" aria-selected="false">Архив</a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-actives-wrap" role="tabpanel" aria-labelledby="pills-actives-tab">
+        <div class="row p-2">
+            <div class="col-12">
+                <p class="mb-2">Ожидаем</p>
+                <div class="custom-btn blue_btn d-inline-block cursor_normal" id="expecting">19:00 12 апреля</div>
+            </div>
+        </div>
+        <div class="row my-3 px-2">
+            <div class="col d-flex flex-column justify-content-end">
+                <p class="font_size_30 font_lato_bold mb-1 text-center" id="zone">
+                    <span class="mr-3">6VIP (другий поверх)</span>
+                    <span class="fa-stack cursor_pointer ml-auto font_size_16">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </p>
+                <p class="gray_text text-center">зона</p>
+            </div>
+            <div class="col d-flex flex-column justify-content-end">
+                <p class="font_size_30 font_lato_bold mb-1 text-center" id="time">
+                    <span class="mr-3">18:30 - 21:00</span>
+                    <span class="fa-stack cursor_pointer ml-auto font_size_16" data-toggle="modal" data-target=".category_modal">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </p>
+                <p class="gray_text text-center">сегодня 12 апреля</p>
+            </div>
+            <div class="col d-flex flex-column justify-content-end">
+                <p class="font_size_30 font_lato_bold mb-1 text-center" id="deposit">
+                    <span class="mr-3">Отсутствует</span>
+                    <span class="fa-stack cursor_pointer ml-auto font_size_16" data-toggle="modal" data-target=".category_modal">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                </p>
+                <p class="gray_text text-center">Депозит бронирования</p>
+            </div>
+        </div>
+        <div class="row mb-3 px-3 d-flex justify-content-around align-items-center">
+            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Отменить</button>
+            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Напомнить</button>
+            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Без визита</button>
+            <button type="button" class="custom-btn green_btn flex_grow_1 mx-5" disabled>Check-in</button>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <div class="form-group custom_form_group">
+                    <label for="user_history_comment" class="gray_text">Комментарии</label>
+                    <p class="font_lato_bold">+СВ</p>
+                    <input type="text" class="form-control bg-transparent pl-0" id="user_history_comment" name="user_history_comment" placeholder="Комментарий администратора">
+                    <button class="custom-btn transparent_btn mt-3">Сохранить комментарий</button>
+                </div>
+            </div>
+        </div>
+        <div class="row blue_bg p-3 preorder border-bottom">
+            <div class="gray_text col-12 px-0">Предзаказ</div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Сумма</label>
+                    <div class="font_size_22">210</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Гарантия:</label>
+                    <div class="font_size_22">-</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Отмена:</label>
+                    <div class="font_size_22">-</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                    <label class="preorder__label color_custom_blue">Штраф:</label>
+                    <div class="font_size_22">210</div>
+                </div>
+            </div>
+        </div>
+        <div class="row blue_bg p-3">
+            <div class="col-12 mb-2 d-flex justify-content-between">
+                <div class="dish_short_desc">
+                    <span class="font_lato_bold w-100 d-block">Омлет</span>
+                    <span>вид омлету: з яловичою шинкою, класичний</span>
+                </div>
+                <div class="dish_price_del">
+                    <span class="value mr-3 font_lato_bold">210</span>
+                    <i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-12 mb-2 d-flex justify-content-between">
+                <div class="dish_short_desc">
+                    <span class="font_lato_bold w-100 d-block">Омлет</span>
+                    <span>вид омлету: з яловичою шинкою, класичний</span>
+                </div>
+                <div class="dish_price_del">
+                    <span class="value mr-3 font_lato_bold">210</span>
+                    <i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <button type="button" class="custom-btn pink_btn mr-3">Отменить все</button>
+                <button type="button" class="custom-btn blue_btn" data-toggle="modal" data-target="#modal_preorder_user">Добавить</button>
+            </div>
+        </div>
+        <div class="row blue_bg mt-4 p-3 preorder border-bottom">
+            <div class="gray_text col-12 px-0">Приглашенные</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="pills-archives-wrap" role="tabpanel" aria-labelledby="pills-archives-tab">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table custom_table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Создано</th>
+                        <th>Стол</th>
+                        <th>Места</th>
+                        <th>Депозит</th>
+                        <th>Статус деп.</th>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>Статус</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>06.042018</td>
+                        <td>22</td>
+                        <td>4</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>06.042018</td>
+                        <td>21:30</td>
+                        <td>Архивное</td>
+                    </tr>
+                    <tr class="text-danger">
+                        <td>06.042018</td>
+                        <td>22</td>
+                        <td>4</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>06.042018</td>
+                        <td>21:30</td>
+                        <td>Без визита</td>
+                    </tr>
+                    <tr>
+                        <td>06.042018</td>
+                        <td>22</td>
+                        <td>4</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>06.042018</td>
+                        <td>21:30</td>
+                        <td>Архивное</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_preorder_user" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="row">
+                        <div class="col">
+                            1
+                        </div>
+                        <div class="col">
+                            2
+                        </div>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 

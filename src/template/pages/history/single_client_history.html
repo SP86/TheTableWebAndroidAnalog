@@ -117,15 +117,15 @@
         <span class="user-info__phone mb-2">+380 67 360 74 37</span>
         <div class="form-group mb-2" id="star_rating_wrapper">
             <div class="rating">
-                <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" disabled/>
                 <label for="star5" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
-                <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" disabled/>
                 <label for="star4" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
-                <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" disabled/>
                 <label for="star3" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
-                <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" checked="checked" />
+                <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" checked="checked" disabled/>
                 <label for="star2" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
-                <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" disabled/>
                 <label for="star1" ><i class="fa fa-star-o" aria-hidden="true"></i></label>
                 <div class="clear"></div>
             </div>
@@ -156,11 +156,24 @@
     <div class="col d-flex align-items-end justify-content-sm-end"><button class="custom-btn blue_btn mr-3 px-5">Check-in</button></div>
 </div>
 <div class="row p-4">
-    <div class="col-12">
+    <div class="col">
         <div class="form-group custom_form_group">
             <label for="user_history_comment" class="gray_text">Комментарий</label>
+            <p class="font_lato_bold">+СВ</p>
             <input type="text" class="form-control bg-transparent" id="user_history_comment" name="user_history_comment">
             <button class="custom-btn transparent_btn mt-3">Сохранить комментарий</button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group custom_form_group">
+            <label class="gray_text">Приглашенные</label>
+            <div class="invited_wrapper d-flex align-items-center font_lato_bold">
+                <img src="http://via.placeholder.com/75x75" class="img-fluid rounded-circle mr-3"/>
+                <div>
+                    <p class="font_size_16 mb-1">380502123654</p>
+                    <p class="mb-1">380502123654</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

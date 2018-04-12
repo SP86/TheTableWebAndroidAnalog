@@ -42,11 +42,17 @@ $sticky-footer-height: 86px;
 .font_size_22{
   font-size: 22px !important;
 }
+.font_size_30{
+  font-size: 30px !important;
+}
 .font_lato_bold{
   font-family:LatoBold;
 }
 .color_custom_blue{
   color: $custom_blue !important;
+}
+.color_custom_grey{
+  color: $gray-700 !important;
 }
 .background_f1f6fb{
   background:#f1f6fb;

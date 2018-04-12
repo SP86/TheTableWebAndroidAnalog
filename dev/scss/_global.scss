@@ -42,6 +42,9 @@ a{
 .cursor_pointer{
   cursor: pointer;
 }
+.cursor_normal{
+  cursor: default !important;
+}
 .gray_text{
   color: $gray-600 !important;
 }
@@ -59,6 +62,9 @@ a{
   user-select: none;
   cursor: pointer;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  &:disabled{
+    opacity: 0.5;
+  }
 }
 .close-btn{
   cursor: pointer;
@@ -777,7 +783,7 @@ form{
         min-height:100px;
       }
       .close-btn{
-        margin-right: 18px;
+        margin-right: 20px;
       }
     }
   }
@@ -795,7 +801,7 @@ form{
   .switch {
     position: relative;
     display: inline-block;
-    width: 34px;
+    width: 42px;
     height: 16px;
   }
 
@@ -840,6 +846,19 @@ form{
     border-radius: 50%;
   }
   /*-----*/
+
+  .nav-pills{
+    .nav-link.active{
+      background: transparent;
+      color: $custom_blue;
+      font-weight: bold;
+    }
+    .show>.nav-link{
+      background: transparent;
+      color: $custom_blue;
+    }
+
+  }
 
 }
 
