@@ -3,3 +3,11 @@
   -ms-transform: rotate(15deg);
   transform: rotate(15deg);
 }
+
+@mixin hover-transition($val){
+  -webkit-transition: all $val ease;
+  -moz-transition: all $val ease;
+  -ms-transition: all $val ease;
+  -o-transition: all $val ease;
+  transition: all $val ease;
+}

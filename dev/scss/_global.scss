@@ -87,10 +87,16 @@ a{
 .blue_btn{
   background: #3f5f99;
   color: #fff;
+  @include hover-transition (0.3s);
+  &:hover{
+    background: #6381c4;
+    @include hover-transition (0.3s);
+  }
 }
 .blue_btn:disabled{
   opacity: 0.8;
 }
+
 .light_blue_btn{
   background: #dde6ef;
   color: #3f5f99;
@@ -102,6 +108,11 @@ a{
 .pink_btn{
   background: #e82f7f;
   color: #fff;
+  @include hover-transition (0.3s);
+  &:hover{
+    background: #dc3545;
+    @include hover-transition (0.3s);
+  }
 }
 .transparent_btn{
   background: transparent;
@@ -785,6 +796,13 @@ form{
       .close-btn{
         margin-right: 20px;
       }
+    }
+  }
+
+  .dish_price_del{
+    .remove_wrapper{
+      min-width:15px;
+      display: inline-block;
     }
   }
 

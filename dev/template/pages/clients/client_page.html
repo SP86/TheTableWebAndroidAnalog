@@ -93,11 +93,13 @@
                 <p class="gray_text text-center">Депозит бронирования</p>
             </div>
         </div>
-        <div class="row mb-3 px-3 d-flex justify-content-around align-items-center">
-            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Отменить</button>
-            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Напомнить</button>
-            <button type="button" class="custom-btn blue_btn flex_grow_1 mx-5">Без визита</button>
-            <button type="button" class="custom-btn green_btn flex_grow_1 mx-5" disabled>Check-in</button>
+        <div class="row px-3">
+            <div class="col-12 d-flex align-items-center">
+                <button type="button" class="custom-btn blue_btn px-4 mb-3 mr-3">Отменить</button>
+                <button type="button" class="custom-btn blue_btn px-4 mb-3 mr-3">Напомнить</button>
+                <button type="button" class="custom-btn blue_btn px-4 mb-3 mr-3">Без визита</button>
+                <button type="button" class="custom-btn green_btn px-4 mb-3 mr-3" disabled>Check-in</button>
+            </div>
         </div>
         <div class="row p-2">
             <div class="col">
@@ -109,63 +111,142 @@
                 </div>
             </div>
         </div>
-        <div class="row blue_bg p-3 preorder border-bottom">
+        <div class="row p-2 mb-3">
+            <div class="col-12">
+                <button type="button" class="custom-btn blue_btn px-5 py-2 font_size_22 mx-auto">Добавить предзаказ</button>
+            </div>
+        </div>
+
+        <!-- Основной предзаказ-->
+        <div class="row blue_bg p-3 preorder">
             <div class="gray_text col-12 px-0">Предзаказ</div>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
                     <label class="preorder__label color_custom_blue">Сумма</label>
                     <div class="font_size_22">210</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
                     <label class="preorder__label color_custom_blue">Гарантия:</label>
                     <div class="font_size_22">-</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
                     <label class="preorder__label color_custom_blue">Отмена:</label>
                     <div class="font_size_22">-</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
                     <label class="preorder__label color_custom_blue">Штраф:</label>
                     <div class="font_size_22">210</div>
                 </div>
             </div>
-        </div>
-        <div class="row blue_bg p-3">
-            <div class="col-12 mb-2 d-flex justify-content-between">
+            <div class="col-12 border-top py-2 d-flex flex-wrap justify-content-between">
                 <div class="dish_short_desc">
                     <span class="font_lato_bold w-100 d-block">Омлет</span>
-                    <span>вид омлету: з яловичою шинкою, класичний</span>
+                    <span class="more_text">вид омлету: з яловичою шинкою, класичний</span>
                 </div>
                 <div class="dish_price_del">
                     <span class="value mr-3 font_lato_bold">210</span>
-                    <i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i>
+                    <span class="remove_wrapper"><i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i></span>
                 </div>
             </div>
-            <div class="col-12 mb-2 d-flex justify-content-between">
+            <div class="col-12 border-top py-2 d-flex flex-wrap justify-content-between">
                 <div class="dish_short_desc">
                     <span class="font_lato_bold w-100 d-block">Омлет</span>
-                    <span>вид омлету: з яловичою шинкою, класичний</span>
+                    <span class="text-danger canceled_admin">Отменено администратором</span>
                 </div>
                 <div class="dish_price_del">
                     <span class="value mr-3 font_lato_bold">210</span>
-                    <i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i>
+                    <span class="remove_wrapper"></span>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-end">
-                <button type="button" class="custom-btn pink_btn mr-3">Отменить все</button>
-                <button type="button" class="custom-btn blue_btn" data-toggle="modal" data-target="#modal_preorder_user">Добавить</button>
+            <div class="col-12 d-flex flex-wrap justify-content-sm-end mt-3">
+                <button type="button" class="custom-btn pink_btn mr-3 mb-3">Отменить все</button>
+                <button type="button" class="custom-btn blue_btn mb-3" data-toggle="modal" data-target="#modal_preorder_user">Добавить</button>
             </div>
         </div>
-        <div class="row blue_bg mt-4 p-3 preorder border-bottom">
-            <div class="gray_text col-12 px-0">Приглашенные</div>
+
+        <!-- Приглашенные предзаказы-->
+        <div class="preorder_invited_wrapper">
+            <div class="preorder_invited__item mb-4">
+                <div class="row blue_bg mt-4 p-3 preorder">
+                    <div class="gray_text col-12 px-0">Приглашенные</div>
+                    <div class="col-12 px-3">
+                        <div class="row py-4">
+                            <div class="col-12 col-sm-3 col-md-auto mb-4 mb-sm-0">
+                                <img src="http://via.placeholder.com/75x75" class="img-fluid rounded-circle"/>
+                            </div>
+                            <div class="col-12 col-sm-9 col-md user-info">
+                                <div class="row">
+                                    <div class="col-12 d-flex flex-wrap align-items-center">
+                                        <i class="fa fa-user-o mr-4 user-info__icon mb-2" aria-hidden="true"></i>
+                                        <h1 class="user-info__title mb-2 mr-4">Сергій Богонос</h1>
+                                    </div>
+                                    <div class="col-12 d-flex flex-wrap align-items-center">
+                                        <i class="fa fa-phone mr-4 user-info__icon mb-2" aria-hidden="true"></i>
+                                        <span class="user-info__phone mb-2">+380 67 360 74 37</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray_text col-12 px-0">Предзаказ</div>
+                    <div class="col mb-3">
+                        <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                            <label class="preorder__label color_custom_blue">Сумма</label>
+                            <div class="font_size_22 font_lato_bold">210</div>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                            <label class="preorder__label color_custom_blue">Гарантия:</label>
+                            <div class="font_size_22 font_lato_bold">Собственная кредит-карта</div>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                            <label class="preorder__label color_custom_blue">Отмена:</label>
+                            <div class="font_size_22 font_lato_bold">-</div>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group h-100 custom_form_group d-flex flex-column justify-content-end">
+                            <label class="preorder__label color_custom_blue">Штраф:</label>
+                            <div class="font_size_22 font_lato_bold">210</div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap justify-content-between border-top py-2">
+                        <div class="dish_short_desc">
+                            <span class="font_lato_bold w-100 d-block">Омлет</span>
+                            <span class="more_text">вид омлету: з яловичою шинкою, класичний</span>
+                        </div>
+                        <div class="dish_price_del">
+                            <span class="value mr-3 font_lato_bold">210</span>
+                            <span class="remove_wrapper"><i class="fa fa-times text-danger cursor_pointer" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap justify-content-between border-top py-2">
+                        <div class="dish_short_desc">
+                            <span class="font_lato_bold w-100 d-block">Омлет</span>
+                            <span class="text-danger canceled_admin">Отменено администратором</span>
+                        </div>
+                        <div class="dish_price_del">
+                            <span class="value mr-3 font_lato_bold">210</span>
+                            <span class="remove_wrapper"></span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-sm-end mt-3">
+                        <button type="button" class="custom-btn pink_btn mr-3">Отменить</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Таб с таблицей архивных записей-->
     <div class="tab-pane fade" id="pills-archives-wrap" role="tabpanel" aria-labelledby="pills-archives-tab">
         <div class="row">
             <div class="table-responsive">
@@ -219,21 +300,76 @@
         </div>
     </div>
 </div>
-
+<!-- Модальное окно предзаказа -->
 <div class="modal fade" id="modal_preorder_user" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
         <div class="modal-content rounded-0 border-0">
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form class="row">
+                    <div class="row blue_bg p-3">
+                        <div class="col-12">
+                            <form class="d-flex align-items-center flex-wrap flex-md-nowrap clients_search_wrap">
+                                <div class="input-group d-flex flex-nowrap align-items-center mb-4 mb-md-0">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="mx-3 border-bottom-green" placeholder="Введите название блюда">
+                                </div>
+                                <button class="close-btn d-flex align-items-center bg-transparent border-0" type="button">
+                                    <i class="fa fa-times-circle ml-2 mr-3" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="custom-btn blue_btn" data-dismiss="modal" aria-label="Close">Вернуться</button>
+                            </form>
+                        </div>
+                    </div>
+                    <form class="row mt-3">
                         <div class="col">
-                            1
+                            <div class="form-group custom_form_group">
+                                <label for="preorder_category" class="preorder__label color_custom_blue">Категории</label>
+                                <select class="form-control font_size_22 border-0 m-0 p-0 color_custom_blue bg-transparent" id="preorder_category" name="preorder_category">
+                                    <option selected="selected">Завтраки</option>
+                                    <option>Обеды</option>
+                                </select>
+                            </div>
+                            <div class="w-100 text-center">
+                                <img src="http://via.placeholder.com/250x170" class="img-fluid mx-auto"/>
+                            </div>
+                            <p class="dish_name font_lato_bold font_size_16 mt-3">Омлет з томатами і моцарелою</p>
+                            <p class="preorder__label color_custom_blue">Смачна страва</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item pl-0 font_lato_bold d-flex justify-content-between align-items-center"><span>Штраф при отмене</span> <span class="value_wrap">460</span> </li>
+                                <li class="list-group-item pl-0 font_lato_bold d-flex justify-content-between align-items-center"><span>Критическое время опоздание</span><span class="value_wrap">15</span></li>
+                                <li class="list-group-item pl-0 font_lato_bold d-flex justify-content-between align-items-center"><span>Вес</span><span class="value_wrap">1шт/350</span></li>
+                            </ul>
                         </div>
                         <div class="col">
-                            2
+                            <div class="form-group custom_form_group">
+                                <label for="preorder_dish" class="preorder__label color_custom_blue">Блюда</label>
+                                <select class="form-control font_size_22 border-0 m-0 p-0 color_custom_blue bg-transparent" id="preorder_dish" name="preorder_dish">
+                                    <option selected="selected">Сібас</option>
+                                    <option>Деруны</option>
+                                </select>
+                            </div>
+                            <p class="font_lato_bold mt-3 mb-1">Вибір: спосіб приготування</p>
+                            <div class="custom-control font_lato_bold custom-checkbox pb-2 ">
+                                <input type="checkbox" class="custom-control-input" id="checkbox1" name="[]">
+                                <label class="custom-control-label" for="checkbox1">гриль</label>
+                            </div>
+                            <div class="custom-control font_lato_bold custom-checkbox pb-2">
+                                <input type="checkbox" class="custom-control-input" id="checkbox2" name="[]">
+                                <label class="custom-control-label" for="checkbox2">на пару</label>
+                            </div>
+                            <p class="font_lato_bold  mt-3 mt-3 mb-1">Вибір: вид страви</p>
+                            <div class="custom-control font_lato_bold custom-checkbox pb-2">
+                                <input type="checkbox" class="custom-control-input" id="checkbox3" name="[]">
+                                <label class="custom-control-label" for="checkbox3">дорадо</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="custom-btn pink_btn pull-right">Добавить</button>
                         </div>
                     </form>
-                </form>
+                </div>
             </div>
         </div>
     </div>
