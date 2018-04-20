@@ -92,9 +92,17 @@ a{
     background: #6381c4;
     @include hover-transition (0.3s);
   }
+  :disabled{
+    opacity: 0.8;
+  }
 }
-.blue_btn:disabled{
-  opacity: 0.8;
+
+.blue_transparent_btn{
+  background: rgba(63,95,153,0.5);
+  color: #fff;
+}
+.blue_transparent_btn.active{
+  background: rgba(63,95,153,1);
 }
 
 .light_blue_btn{
@@ -177,8 +185,10 @@ form{
   }
 }
 
-.custom_select{
-
+.pink_round_icon{
+  background: #e82f7f;
+  padding: 8px;
+  border-radius: 20px;
 }
 
 .help-block.form-error{
