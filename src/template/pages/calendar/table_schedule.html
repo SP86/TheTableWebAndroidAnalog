@@ -117,11 +117,40 @@
         <p class="mb-2 schedule-info__item">Зона: ВСЕ</p>
     </div>
     <div class="col-12 col-sm d-flex flex-column align-items-center justify-content-center">
-        <div class="schedule-info__period text-center">
+        <div class="schedule-info__period text-center d-none">
             <p>с <span class="schedule_from">15:00</span> до <span class="schedule_to">21:00</span></p>
             <button class="custom-btn pink_btn px-5">Выбрать время</button>
         </div>
+
+        <div class="schedule-info__period text-center">
+            <button class="custom-btn green_btn px-5" data-toggle="modal" data-target="#modal_all_day_reservation" data-dismiss="modal">Резервировать на весь день</button>
+        </div>
     </div>
+
+    <div class="modal fade success" id="modal_all_day_reservation" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Резервировать на весь день</span>
+                            <button class="custom-btn blue_btn" data-dismiss="modal" aria-label="Close">Отменить</button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <button type="button" class="custom-btn transparent_btn">Только стол</button>
+                            <button type="button" class="custom-btn transparent_btn">Вся зона</button>
+                        </div>
+
+                        <div class="custom_form_group mt-4">
+                            <input type="text" class="mx-3 border-bottom-green font_size_30 border-0 color_" value="500">
+                        </div>
+                        <button type="button" class="custom-btn green_btn mx-auto mt-3">Внести сумму в кассу</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <form class="row mt-3">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
