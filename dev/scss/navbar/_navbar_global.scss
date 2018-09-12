@@ -53,20 +53,6 @@
           text-transform: capitalize;
         }
       }
-      @include media-breakpoint-up(lg){
-        .nav-item.active{
-          &:before{
-            content: "";
-            background: url("../img/oval.png");
-            position: absolute;
-            left:0px;
-            top:50%;
-            width: 20px;
-            height: 50px;
-            margin-top: -25px;
-          }
-        }
-      }
     }
     .navbar-sidenav {
       .nav-link-collapse:after {
